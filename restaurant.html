@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TONY Restaurant - Fresh food, great taste and fast service."
+    >
+
+    <title>TONY Restaurant | Food & Dining</title>
+
+    <style>
+
+        /* ================================
+           BASIC RESET
+        ================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf5;
+            color: #333;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================ */
+
+        header {
+            width: 100%;
+
+            background: #1f1f1f;
+            color: white;
+
+            padding: 20px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: #ff9f43;
+            font-size: 26px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff9f43;
+        }
+
+
+        /* ================================
+           HERO
+        ================================ */
+
+        .hero {
+            min-height: 80vh;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.55),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("images/restaurant.jpg") center/cover;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 40px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+
+            animation: fadeUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+
+            color: #f1f1f1;
+        }
+
+
+        /* ================================
+           BUTTON
+        ================================ */
+
+        .btn {
+            display: inline-block;
+
+            background: #ff9f43;
+
+            color: white;
+
+            padding: 14px 30px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff7b00;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ================================
+           MENU SECTION
+        ================================ */
+
+        .menu {
+            padding: 100px 8%;
+
+            text-align: center;
+        }
+
+        .section-title {
+            color: #ff7b00;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .menu h2 {
+            font-size: 42px;
+
+            margin-bottom: 50px;
+        }
+
+
+        /* ================================
+           FOOD CARDS
+        ================================ */
+
+        .menu-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .food-card {
+            background: white;
+
+            padding: 35px 25px;
+
+            border-radius: 15px;
+
+            border: 1px solid #eee;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+            border-color: #ff9f43;
+        }
+
+        .food-icon {
+            font-size: 45px;
+
+            margin-bottom: 20px;
+        }
+
+        .food-card h3 {
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+        .food-card p {
+            color: #777;
+
+            line-height: 1.6;
+        }
+
+        .price {
+            color: #ff7b00 !important;
+
+            font-weight: bold;
+
+            font-size: 18px;
+
+            margin-top: 18px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ================================
+           ORDER BUTTON
+        ================================ */
+
+        .order-btn {
+            display: inline-block;
+
+            background: #25d366;
+
+            color: white;
+
+            padding: 10px 20px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .order-btn:hover {
+            background: #1ebe5d;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ================================
+           CONTACT
+        ================================ */
+
+        .contact {
+            padding: 90px 8%;
+
+            background: #1f1f1f;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #ccc;
+
+            margin-bottom: 30px;
+
+            line-height: 1.7;
+        }
+
+        .contact-info {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 40px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-info span {
+            color: #ff9f43;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================ */
+
+        footer {
+            background: #111;
+
+            color: #999;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ================================
+           ANIMATION
+        ================================ */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================ */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 18px 5%;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            header h2 {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: 75vh;
+
+                padding: 40px 5%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+
+            /* MENU */
+
+            .menu {
+                padding: 70px 5%;
+            }
+
+            .menu h2 {
+                font-size: 34px;
+
+                margin-bottom: 35px;
+            }
+
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* CONTACT */
+
+            .contact {
+                padding: 70px 5%;
+            }
+
+            .contact h2 {
+                font-size: 34px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            /* FOOTER */
+
+            footer {
+                padding: 20px 5%;
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+
+        <h2>TONY Restaurant</h2>
+
+        <nav>
+
+            <a href="#">Home</a>
+
+            <a href="#menu">Menu</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Delicious Food</h1>
+
+            <p>
+                Fresh ingredients. Great taste.
+                Happy customers.
+            </p>
+
+            <a href="#menu" class="btn">
+                View Our Menu
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         MENU
+    ================================= -->
+
+    <section class="menu" id="menu">
+
+        <p class="section-title">
+            OUR SPECIALITIES
+        </p>
+
+        <h2>
+            Popular Menu
+        </h2>
+
+
+        <div class="menu-container">
+
+
+            <!-- FOOD 1 -->
+
+            <div class="food-card">
+
+                <div class="food-icon">
+                    🍗
+                </div>
+
+                <h3>
+                    BBQ Chicken
+                </h3>
+
+                <p>
+                    Juicy grilled chicken
+                    with our special BBQ sauce.
+                </p>
+
+                <p class="price">
+                    LKR 1,500
+                </p>
+
+                <a
+                    href="https://wa.me/94767343422?text=Hello%20TONY%20Restaurant!%20I%20want%20to%20order%20BBQ%20Chicken."
+                    target="_blank"
+                    class="order-btn"
+                >
+                    Order on WhatsApp
+                </a>
+
+            </div>
+
+
+            <!-- FOOD 2 -->
+
+            <div class="food-card">
+
+                <div class="food-icon">
+                    🍔
+                </div>
+
+                <h3>
+                    Chicken Burger
+                </h3>
+
+                <p>
+                    Crispy chicken burger
+                    with fresh vegetables.
+                </p>
+
+                <p class="price">
+                    LKR 1,200
+                </p>
+
+                <a
+                    href="https://wa.me/94767343422?text=Hello%20TONY%20Restaurant!%20I%20want%20to%20order%20Chicken%20Burger."
+                    target="_blank"
+                    class="order-btn"
+                >
+                    Order on WhatsApp
+                </a>
+
+            </div>
+
+
+            <!-- FOOD 3 -->
+
+            <div class="food-card">
+
+                <div class="food-icon">
+                    🍕
+                </div>
+
+                <h3>
+                    Chicken Pizza
+                </h3>
+
+                <p>
+                    Cheesy pizza topped
+                    with delicious chicken.
+                </p>
+
+                <p class="price">
+                    LKR 1,800
+                </p>
+
+                <a
+                    href="https://wa.me/94767343422?text=Hello%20TONY%20Restaurant!%20I%20want%20to%20order%20Chicken%20Pizza."
+                    target="_blank"
+                    class="order-btn"
+                >
+                    Order on WhatsApp
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         CONTACT
+    ================================= -->
+
+    <section class="contact" id="contact">
+
+        <h2>
+            Visit Our Restaurant
+        </h2>
+
+        <p>
+            Have a question or want to make an order?
+            Contact us through WhatsApp.
+        </p>
+
+
+        <div class="contact-info">
+
+            <div>
+                📞 <span>076 734 3422</span>
+            </div>
+
+            <div>
+                📍 <span>Colombo, Sri Lanka</span>
+            </div>
+
+            <div>
+                🕐 <span>Open Daily: 10 AM - 10 PM</span>
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://wa.me/94767343422?text=Hello%20TONY%20Restaurant!%20I%20would%20like%20to%20make%20an%20inquiry."
+            target="_blank"
+            class="btn"
+        >
+            Contact on WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 TONY Restaurant |
+            Website Demo by TONY Web Solutions
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

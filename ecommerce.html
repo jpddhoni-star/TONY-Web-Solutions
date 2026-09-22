@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TONY Store - Quality products at affordable prices."
+    >
+
+    <title>TONY Store | E-Commerce Demo</title>
+
+    <style>
+
+        /* ================================
+           BASIC RESET
+        ================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #111827;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================ */
+
+        header {
+            width: 100%;
+
+            background: #111827;
+
+            color: white;
+
+            padding: 20px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: #38bdf8;
+
+            font-size: 26px;
+        }
+
+        nav {
+            display: flex;
+
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* ================================
+           HERO
+        ================================ */
+
+        .hero {
+            min-height: 70vh;
+
+            padding: 80px 8%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(224, 242, 254, 0.92),
+                    rgba(224, 242, 254, 0.92)
+                ),
+                url("images/ecommerce.jpg") center/cover;
+        }
+
+        .hero-content {
+            max-width: 750px;
+
+            animation: fadeUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+
+            color: #475569;
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ================================
+           BUTTON
+        ================================ */
+
+        .btn {
+            display: inline-block;
+
+            background: #0284c7;
+
+            color: white;
+
+            padding: 14px 28px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #0369a1;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ================================
+           PRODUCTS
+        ================================ */
+
+        .products {
+            padding: 100px 8%;
+
+            text-align: center;
+        }
+
+        .section-title {
+            color: #0284c7;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .products h2 {
+            font-size: 42px;
+
+            margin-bottom: 50px;
+        }
+
+        .product-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================================
+           PRODUCT CARD
+        ================================ */
+
+        .product {
+            background: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+            text-align: left;
+
+            transition: 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+
+            border-color: #38bdf8;
+        }
+
+
+        /* ================================
+           PRODUCT IMAGE
+        ================================ */
+
+        .product-image {
+            width: 100%;
+
+            height: 230px;
+
+            overflow: hidden;
+
+            background: #e2e8f0;
+        }
+
+        .product img {
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .product:hover img {
+            transform: scale(1.06);
+        }
+
+
+        /* ================================
+           PRODUCT INFO
+        ================================ */
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 21px;
+
+            margin-bottom: 10px;
+        }
+
+        .product-info > p:not(.price) {
+            color: #64748b;
+
+            line-height: 1.6;
+        }
+
+        .price {
+            color: #0284c7;
+
+            font-size: 19px;
+
+            font-weight: bold;
+
+            margin: 18px 0;
+        }
+
+
+        /* ================================
+           ORDER BUTTON
+        ================================ */
+
+        .order-btn {
+            display: inline-block;
+
+            background: #22c55e;
+
+            color: white;
+
+            padding: 11px 18px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .order-btn:hover {
+            background: #16a34a;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ================================
+           CONTACT
+        ================================ */
+
+        .contact {
+            padding: 90px 8%;
+
+            background: #111827;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #94a3b8;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 40px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-info span {
+            color: #38bdf8;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================ */
+
+        footer {
+            background: #020617;
+
+            color: #94a3b8;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ================================
+           ANIMATION
+        ================================ */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================ */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 18px 5%;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            header h2 {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: 65vh;
+
+                padding: 60px 5%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+
+            /* PRODUCTS */
+
+            .products {
+                padding: 70px 5%;
+            }
+
+            .products h2 {
+                font-size: 34px;
+
+                margin-bottom: 35px;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* CONTACT */
+
+            .contact {
+                padding: 70px 5%;
+            }
+
+            .contact h2 {
+                font-size: 34px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            /* FOOTER */
+
+            footer {
+                padding: 20px 5%;
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+
+        <h2>
+            TONY Store
+        </h2>
+
+        <nav>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#products">
+                Products
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Shop Smart. Live Better.
+            </h1>
+
+            <p>
+                Discover quality products at
+                affordable prices.
+            </p>
+
+            <a href="#products" class="btn">
+                Shop Now
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         PRODUCTS
+    ================================= -->
+
+    <section class="products" id="products">
+
+        <p class="section-title">
+            OUR PRODUCTS
+        </p>
+
+        <h2>
+            Featured Products
+        </h2>
+
+
+        <div class="product-container">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/ecommerce.jpg"
+                        alt="Smart Watch"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Smart Watch
+                    </h3>
+
+                    <p>
+                        Modern smartwatch with
+                        useful features.
+                    </p>
+
+                    <p class="price">
+                        LKR 8,500
+                    </p>
+
+                    <a
+                        href="https://wa.me/94767343422?text=Hello%20TONY%20Store!%20I%20am%20interested%20in%20the%20Smart%20Watch."
+                        target="_blank"
+                        class="order-btn"
+                    >
+                        Order on WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/ecommerce.jpg"
+                        alt="Wireless Headphones"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Wireless Headphones
+                    </h3>
+
+                    <p>
+                        High-quality wireless
+                        audio experience.
+                    </p>
+
+                    <p class="price">
+                        LKR 6,500
+                    </p>
+
+                    <a
+                        href="https://wa.me/94767343422?text=Hello%20TONY%20Store!%20I%20am%20interested%20in%20the%20Wireless%20Headphones."
+                        target="_blank"
+                        class="order-btn"
+                    >
+                        Order on WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img
+                        src="images/ecommerce.jpg"
+                        alt="Gaming Keyboard"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <h3>
+                        Gaming Keyboard
+                    </h3>
+
+                    <p>
+                        Mechanical keyboard
+                        for gaming and work.
+                    </p>
+
+                    <p class="price">
+                        LKR 9,900
+                    </p>
+
+                    <a
+                        href="https://wa.me/94767343422?text=Hello%20TONY%20Store!%20I%20am%20interested%20in%20the%20Gaming%20Keyboard."
+                        target="_blank"
+                        class="order-btn"
+                    >
+                        Order on WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         CONTACT
+    ================================= -->
+
+    <section class="contact" id="contact">
+
+        <h2>
+            Need Help?
+        </h2>
+
+        <p>
+            Have a question about a product?
+            Contact us through WhatsApp.
+        </p>
+
+
+        <div class="contact-info">
+
+            <div>
+                📞 <span>076 734 3422</span>
+            </div>
+
+            <div>
+                📍 <span>Colombo, Sri Lanka</span>
+            </div>
+
+            <div>
+                🕐 <span>Open Daily: 9 AM - 9 PM</span>
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://wa.me/94767343422?text=Hello%20TONY%20Store!%20I%20would%20like%20to%20make%20an%20inquiry."
+            target="_blank"
+            class="btn"
+        >
+            Contact on WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 TONY Store |
+            Website Demo by TONY Web Solutions
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

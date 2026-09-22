@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="TONY Academy - Practical online education and professional courses."
+    >
+
+    <title>TONY Academy | Education Demo</title>
+
+    <style>
+
+        /* ================================
+           BASIC RESET
+        ================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background: #f8fafc;
+
+            color: #111827;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================ */
+
+        header {
+            width: 100%;
+
+            background: #312e81;
+
+            color: white;
+
+            padding: 20px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+        }
+
+        header h2 {
+            color: #c4b5fd;
+
+            font-size: 26px;
+        }
+
+        nav {
+            display: flex;
+
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c4b5fd;
+        }
+
+
+        /* ================================
+           HERO
+        ================================ */
+
+        .hero {
+            min-height: 72vh;
+
+            background:
+                linear-gradient(
+                    rgba(49, 46, 129, 0.88),
+                    rgba(49, 46, 129, 0.88)
+                ),
+                url("images/education.jpg") center/cover;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 40px;
+        }
+
+        .hero-content {
+            max-width: 750px;
+
+            animation: fadeUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+
+            line-height: 1.1;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            color: #e0e7ff;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ================================
+           BUTTON
+        ================================ */
+
+        .btn {
+            display: inline-block;
+
+            background: #8b5cf6;
+
+            color: white;
+
+            padding: 14px 28px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #7c3aed;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* ================================
+           COURSES
+        ================================ */
+
+        .courses {
+            padding: 100px 8%;
+
+            text-align: center;
+        }
+
+        .section-title {
+            color: #7c3aed;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .courses h2 {
+            font-size: 42px;
+
+            margin-bottom: 50px;
+        }
+
+        .course-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================================
+           COURSE CARD
+        ================================ */
+
+        .course {
+            background: white;
+
+            padding: 35px 25px;
+
+            border-radius: 15px;
+
+            border: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+
+            text-align: left;
+
+            transition: 0.3s;
+        }
+
+        .course:hover {
+            transform: translateY(-8px);
+
+            border-color: #8b5cf6;
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .course-icon {
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #ede9fe;
+
+            border-radius: 12px;
+
+            font-size: 27px;
+
+            margin-bottom: 20px;
+        }
+
+        .course h3 {
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+        .course p {
+            color: #64748b;
+
+            line-height: 1.7;
+
+            margin-bottom: 20px;
+        }
+
+        .course-link {
+            color: #7c3aed;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+        .course-link:hover {
+            color: #5b21b6;
+        }
+
+
+        /* ================================
+           WHY CHOOSE US
+        ================================ */
+
+        .features {
+            padding: 90px 8%;
+
+            background: #eef2ff;
+
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 40px;
+
+            margin-bottom: 45px;
+        }
+
+        .feature-container {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .feature {
+            background: white;
+
+            padding: 30px 25px;
+
+            border-radius: 15px;
+        }
+
+        .feature-icon {
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #64748b;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================================
+           CONTACT
+        ================================ */
+
+        .contact {
+            padding: 90px 8%;
+
+            background: #1e1b4b;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #c7d2fe;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 40px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-info span {
+            color: #c4b5fd;
+
+            font-weight: bold;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================ */
+
+        footer {
+            background: #0f0b2e;
+
+            color: #a5b4fc;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ================================
+           ANIMATION
+        ================================ */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================ */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 18px 5%;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            header h2 {
+                font-size: 23px;
+            }
+
+            nav {
+                gap: 18px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: 65vh;
+
+                padding: 50px 5%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+
+            /* COURSES */
+
+            .courses {
+                padding: 70px 5%;
+            }
+
+            .courses h2 {
+                font-size: 34px;
+
+                margin-bottom: 35px;
+            }
+
+            .course-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* FEATURES */
+
+            .features {
+                padding: 70px 5%;
+            }
+
+            .features h2 {
+                font-size: 34px;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* CONTACT */
+
+            .contact {
+                padding: 70px 5%;
+            }
+
+            .contact h2 {
+                font-size: 34px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+
+            /* FOOTER */
+
+            footer {
+                padding: 20px 5%;
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         HEADER
+    ================================= -->
+
+    <header>
+
+        <h2>
+            TONY Academy
+        </h2>
+
+        <nav>
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#features">
+                Why Us
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================================
+         HERO
+    ================================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Learn. Grow. Succeed.
+            </h1>
+
+            <p>
+                Build your future with practical
+                online education and industry-focused skills.
+            </p>
+
+            <a
+                href="#courses"
+                class="btn"
+            >
+                Explore Courses
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         COURSES
+    ================================= -->
+
+    <section
+        class="courses"
+        id="courses"
+    >
+
+        <p class="section-title">
+            LEARN NEW SKILLS
+        </p>
+
+        <h2>
+            Popular Courses
+        </h2>
+
+
+        <div class="course-container">
+
+
+            <!-- COURSE 1 -->
+
+            <div class="course">
+
+                <div class="course-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Learn HTML, CSS and JavaScript
+                    and build modern responsive websites.
+                </p>
+
+                <a
+                    href="https://wa.me/94767343422?text=Hello%20TONY%20Academy!%20I%20am%20interested%20in%20the%20Web%20Development%20course."
+                    target="_blank"
+                    class="course-link"
+                >
+                    Enquire Now →
+                </a>
+
+            </div>
+
+
+            <!-- COURSE 2 -->
+
+            <div class="course">
+
+                <div class="course-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Python Programming
+                </h3>
+
+                <p>
+                    Learn Python programming and
+                    create practical real-world applications.
+                </p>
+
+                <a
+                    href="https://wa.me/94767343422?text=Hello%20TONY%20Academy!%20I%20am%20interested%20in%20the%20Python%20Programming%20course."
+                    target="_blank"
+                    class="course-link"
+                >
+                    Enquire Now →
+                </a>
+
+            </div>
+
+
+            <!-- COURSE 3 -->
+
+            <div class="course">
+
+                <div class="course-icon">
+                    🗄️
+                </div>
+
+                <h3>
+                    Database Management
+                </h3>
+
+                <p>
+                    Learn SQL, MySQL and database
+                    design fundamentals.
+                </p>
+
+                <a
+                    href="https://wa.me/94767343422?text=Hello%20TONY%20Academy!%20I%20am%20interested%20in%20the%20Database%20Management%20course."
+                    target="_blank"
+                    class="course-link"
+                >
+                    Enquire Now →
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         WHY CHOOSE US
+    ================================= -->
+
+    <section
+        class="features"
+        id="features"
+    >
+
+        <h2>
+            Why Choose Us?
+        </h2>
+
+
+        <div class="feature-container">
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Practical Learning
+                </h3>
+
+                <p>
+                    Focus on useful skills
+                    and real-world projects.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    👨‍💻
+                </div>
+
+                <h3>
+                    Beginner Friendly
+                </h3>
+
+                <p>
+                    Easy-to-understand lessons
+                    for students at every level.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Career Focused
+                </h3>
+
+                <p>
+                    Develop skills that can
+                    support your future career.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================
+         CONTACT
+    ================================= -->
+
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <h2>
+            Start Learning Today
+        </h2>
+
+        <p>
+            Have questions about our courses?
+            Contact us through WhatsApp.
+        </p>
+
+
+        <div class="contact-info">
+
+            <div>
+                📞 <span>076 734 3422</span>
+            </div>
+
+            <div>
+                📍 <span>Colombo, Sri Lanka</span>
+            </div>
+
+            <div>
+                🕐 <span>Mon - Sat: 9 AM - 8 PM</span>
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://wa.me/94767343422?text=Hello%20TONY%20Academy!%20I%20would%20like%20to%20know%20more%20about%20your%20courses."
+            target="_blank"
+            class="btn"
+        >
+            Contact on WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- ================================
+         FOOTER
+    ================================= -->
+
+    <footer>
+
+        <p>
+            © 2026 TONY Academy |
+            Website Demo by TONY Web Solutions
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
