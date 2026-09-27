@@ -1057,4 +1057,104 @@ nav ul li a:hover {
         margin-top: 35px;
     }
 
+}    
+
+.pricing-section {
+  padding: 80px 20px;
+  text-align: center;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+.pricing-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section-sub {
+  color: #aaa;
+  margin-bottom: 40px;
+}
+
+.pricing-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.pricing-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 35px 25px;
+  width: 280px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+}
+
+.pricing-card.popular {
+  border: 2px solid #00c6ff;
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00c6ff;
+  color: #000;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.price span {
+  font-size: 0.9rem;
+  color: #aaa;
+  font-weight: normal;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.btn-outline, .btn-fill {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.btn-outline {
+  border: 1px solid #00c6ff;
+  color: #00c6ff;
+}
+
+.btn-fill {
+  background: #00c6ff;
+  color: #000;
 }
