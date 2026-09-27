@@ -1306,4 +1306,18 @@ nav ul li a:hover {
         margin-top: 35px;
     }
 
+}  
+
+/* ================================
+   NAVBAR PRICING LINK FIX
+================================ */
+
+nav ul li a[href="#pricing"] {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a[href="#pricing"]:hover {
+    color: #38bdf8;
+    text-decoration: none;
 }
